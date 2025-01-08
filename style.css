@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #212121;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 2vw;
+}
+.square {
+  width: 15vw;
+  height: 15vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 50px; 
+  min-height: 50px;
+}
+
+/**********************CLOCK-CSS**********************/
+
+.clock-container {
+  position: relative;
+}
+
+.clock {
+  width: 15vw;
+  height: 15vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 50px; 
+  min-height: 50px;
+  border-radius: 50%;
+  background-color: rgb(255,255,255,0.2);
+  border: 2px solid white;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.6);
+}
+
+.clock span {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 12px;
+  text-align: center;
+}
