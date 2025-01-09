@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  color: white;
+  color: black;
 }
 
 body {
@@ -12,22 +12,29 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #212121;
+  background-color: #f8f6d8;
 }
 .container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 2vw;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .square {
   width: 15vw;
   height: 15vw;
   max-width: 200px;
   max-height: 200px;
-  min-width: 50px; 
-  min-height: 50px;
+  min-width: 100px; 
+  min-height: 100px;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
 }
 
 /**********************CLOCK-CSS**********************/
@@ -41,17 +48,91 @@ body {
   height: 15vw;
   max-width: 200px;
   max-height: 200px;
-  min-width: 50px; 
-  min-height: 50px;
+  min-width: 100px; 
+  min-height: 100px;
   border-radius: 50%;
   background-color: rgb(255,255,255,0.2);
-  border: 2px solid white;
+  border: 2px dashed black;
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.clock span {
+.clock::before {
+  content: '';
   position: absolute;
-  transform: rotate(calc(30deg * var(--i)));
-  inset: 12px;
-  text-align: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 2;
+}
+
+.hand {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+}
+.hand i{
+  position: absolute;
+  background-color: var(--clr);
+  width: 4px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+
+.hour i{
+  height: 50px;
+}
+.min i{
+  height: 70px;
+}
+.sec i{
+  height: 80px;
+}
+
+
+
+@media (max-width: 1080px) {
+  .container {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 12vw
+  }
+
+  .hour i{
+    height: 30px;
+  }
+  .min i{
+    height: 50px;
+  }
+  .sec i{
+    height: 60px;
+  }  
+}
+@media (max-width: 800px) {
+  .hour i{
+    height: 25px;
+  }
+  .min i{
+    height: 40px;
+  }
+  .sec i{
+    height: 50px;
+  }  
+}
+@media (max-width: 700px) {
+  .hour i{
+    height: 18px;
+  }
+  .min i{
+    height: 30px;
+  }
+  .sec i{
+    height: 40px;
+  }  
 }
